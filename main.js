@@ -74,6 +74,9 @@ window.onload = function() {
         .then(function(result) {
             logout.disabled = true;
             loggedInContent.classList.add("hidden");
+            loginGithub.disabled = false;
+            loginGoogle.disabled = false;
+            loginFacebook.disabled = false;
         })
         .catch(function(error) {
             console.log("Sign out failed");
