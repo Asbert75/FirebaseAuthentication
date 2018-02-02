@@ -26,6 +26,12 @@ button {
 
 #loggedIn {
     margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#notLoggedIn {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 #profilePicture {

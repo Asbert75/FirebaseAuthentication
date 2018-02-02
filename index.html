@@ -25,6 +25,11 @@
 
 <body>
     <div class="content">
+        <div id="loggedIn" class="hidden">
+            <img id="profilePicture" src="me.jpg" alt="Profile Picture" />
+            <p id="username">Username</p>
+        </div>
+        <p id="notLoggedIn">You are currently not logged in.</p>
         <div class="buttons">
             <button id="loginGithub">Logga in via GitHub</button>
             <button id="loginGoogle">Logga in via Google</button>
@@ -33,10 +38,6 @@
             <button id="logout">Logga ut</button>
         </div>
         <p id="errorMessage" class="hidden">Error</p>
-        <div id="loggedIn" class="hidden">
-            <img id="profilePicture" src="me.jpg" alt="Profile Picture" />
-            <p id="username">Username</p>
-        </div>
     </div>
 </body>
 </html>

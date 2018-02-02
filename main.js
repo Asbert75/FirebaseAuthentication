@@ -6,6 +6,7 @@ window.onload = function() {
     const loginFacebook = document.getElementById("loginFacebook");
 
     const logout = document.getElementById("logout");
+    const notLoggedIn = document.getElementById("notLoggedIn");
 
     const errorMessage = document.getElementById("errorMessage");
 
@@ -42,6 +43,8 @@ window.onload = function() {
             loggedInContent.classList.remove("hidden");
             username.innerText = user.name;
             profilePicture.src = user.profilePicture;
+
+            notLoggedIn.classList.add("hidden");
         }
         else {
             logout.disabled = true;
@@ -77,6 +80,8 @@ window.onload = function() {
             loginGithub.disabled = false;
             loginGoogle.disabled = false;
             loginFacebook.disabled = false;
+
+            notLoggedIn.classList.remove("hidden");
         })
         .catch(function(error) {
             console.log("Sign out failed");
