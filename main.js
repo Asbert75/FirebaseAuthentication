@@ -68,7 +68,7 @@ window.onload = function() {
     });
 
     logout.addEventListener("click", function() {
-        firebase.auth.signOut()
+        firebase.auth().signOut()
         .then(function(result) {
             logout.disabled = true;
             loggedInContent.classList.add("hidden");
