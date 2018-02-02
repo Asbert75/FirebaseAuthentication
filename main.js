@@ -42,19 +42,19 @@ window.onload = function() {
     });
 
     loginGithub.addEventListener("click", function() {
-        provider = new firebase.auth().GithubAuthProvider();
+        provider = new firebase.auth.GithubAuthProvider();
 
         redirectSignIn(provider);
     });
 
     loginFacebook.addEventListener("click", function(){
-        provider = new firebase.auth().FacebookAuthProvider();
+        provider = new firebase.auth.FacebookAuthProvider();
 
         redirectSignIn(provider);
     });
 
     loginGoogle.addEventListener("click", function() {
-        provider = new firebase.auth().GoogleAuthProvider();
+        provider = new firebase.auth.GoogleAuthProvider();
 
         redirectSignIn(provider);
     });
