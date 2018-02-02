@@ -10,6 +10,10 @@ window.onload = function() {
 
     const errorMessage = document.getElementById("errorMessage");
 
+    const loggedInContent = document.getElementById("loggedIn");
+    const username = document.getElementById("username");
+    const profilePicture = document.getElementById("profilePicture");
+
     let provider;
     let user = {
         name: null,
@@ -28,13 +32,17 @@ window.onload = function() {
     firebase.auth().getRedirectResult()
     .then(function(result) {
         if(result.user) {
-            //user.name = firebase.auth().currentUser.displayName;
-            //user.profilePicture = firebase.auth().currentUser.p
-            console.log(result.user);
+            user.name = firebase.auth().currentUser.displayName;
+            user.profilePicture = firebase.auth().currentUser.photoURL;
+
             logout.disabled = false;
             loginGithub.disabled = true;
             loginGoogle.disabled = true;
             loginFacebook.disabled = true;
+
+            loggedInContent.classList.remove("hidden");
+            username.innerText = user.name;
+            profilePicture.src = user.profilePicture;
         }
     })
     .catch(function(error) {
@@ -62,8 +70,8 @@ window.onload = function() {
     logout.addEventListener("click", function() {
         firebase.auth.signOut()
         .then(function(result) {
-            console.log("Signed out");
             logout.disabled = true;
+            loggedInContent.classList.add("hidden");
         })
         .catch(function(error) {
             console.log("Sign out failed");
