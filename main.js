@@ -6,7 +6,6 @@ window.onload = function() {
     const loginFacebook = document.getElementById("loginFacebook");
 
     const logout = document.getElementById("logout");
-    logout.disabled = true;
 
     const errorMessage = document.getElementById("errorMessage");
 
@@ -43,6 +42,9 @@ window.onload = function() {
             loggedInContent.classList.remove("hidden");
             username.innerText = user.name;
             profilePicture.src = user.profilePicture;
+        }
+        else {
+            logout.disabled = true;
         }
     })
     .catch(function(error) {
